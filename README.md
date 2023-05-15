@@ -1,7 +1,7 @@
 # SG-Tyres
 QBCore based fivem tyre replacement script. includes normal and bulletproof tyre replacement items and commands.
 
-Basic Showcase Video: https://youtu.be/njiaVNBoAFM
+https://github.com/shamgamer/SG-Tyres/assets/63604663/3f981b01-1df9-4397-bf57-36352f4bc191
 
 for the items to work you will need to add the txt file contents to the "Drive:\txData\QBCoreFramework_46B3BD.base\resources\[qb]\qb-core\shared\items.lua" 
 

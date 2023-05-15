@@ -3,28 +3,16 @@ QBCore based fivem tyre replacement script. includes normal and bulletproof tyre
 
 https://github.com/shamgamer/SG-Tyres/assets/63604663/58fa8403-95d1-4b3e-8327-1142826ad0eb
 
-for the items to work you will need to add the txt file contents to the "Drive:\txData\QBCoreFramework_46B3BD.base\resources\[qb]\qb-core\shared\items.lua" 
+for the items to work you will need to add the txt file contents to the 
 
-and the photos to "Drive:\txData\QBCoreFramework_46B3BD.base\resources\[qb]\qb-inventory\html\images"
+"**Drive:**\txData\QBCoreFramework_46B3BD.base\resources\[qb]\qb-core\shared\items.lua" 
+
+and the photos to 
+
+"**Drive:**\txData\QBCoreFramework_46B3BD.base\resources\[qb]\qb-inventory\html\images"
 
 --------
 
-Default Commands: 
+Check out the github wiki for info or help:
 
-/fixwheels
-
-/addbulletprooftyres
-
-/removebulletprooftyres
-
-(these commands can be changed and toggled in the config file)
-
----------
-
-Items:
-
-Standard Tyres Kit: Used when in a vehicle to swap tyres with new ones (not bulletproof).
-
-Bulletproof Tyres kit: Used when in a vehicle to swap tyres with new and bulletproof ones.
-
-(these have a configureable 10sec use time and can be toggled in the config).
+**https://github.com/shamgamer/SG-Tyres/wiki**

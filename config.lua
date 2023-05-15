@@ -52,6 +52,9 @@ Config.NRTIUD = "Tyres Have Been Replaced!" -- Normal replace tyres item use Don
 Config.BPRTIUS = "Replacing Tyres!" -- Bulletproof replace tyres item use Start notification.
 Config.BPRTIUD = "Tyres Have Been Replaced!" -- Bulletproof replace tyres item use Done notification.
 
+-- Bulletproof Toggles:
+Config.NRTIBP = true -- If the standard tyre swap will REMOVE bulletproofing (true = remove bulletproof)
+Config.BPRTIBP = true -- If the bulletproof tyre swap will ADD bulletproofing (true = add bulletproof)
 
 
 
@@ -59,8 +62,5 @@ Config.BPRTIUD = "Tyres Have Been Replaced!" -- Bulletproof replace tyres item u
 
 
 
-
-
-
--- SG-tyres Version 1.0
+-- SG-tyres Version 1.1
 -- Made by Shamgamer & BR2BOY

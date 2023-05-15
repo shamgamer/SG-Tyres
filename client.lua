@@ -4,19 +4,14 @@ CreateThread(function()
     print(Config.StartMSG)
     end
 end)
+
 -- Commands:
 
 RegisterCommand( Config.Tyrefixcommand, function()
     if Config.TFtoggle then
     local plyPed = PlayerPedId()
     local vehicle = GetVehiclePedIsIn(plyPed, false)
-    SetVehicleTyreFixed(vehicle, 0)
-    SetVehicleTyreFixed(vehicle, 1)
-    SetVehicleTyreFixed(vehicle, 2)
-    SetVehicleTyreFixed(vehicle, 3)
-    SetVehicleTyreFixed(vehicle, 4)
-    SetVehicleTyreFixed(vehicle, 5)
-    SetVehicleTyreFixed(vehicle, 6)
+    TriggerEvent("fixwheelsevent", vehicle)
     if Config.FWCTT then
     QBCore.Functions.Notify(Config.FWCT)
     end
@@ -28,13 +23,7 @@ RegisterCommand(Config.ABPtyrescommand, function()
     local plyPed = PlayerPedId()
     local vehicle = GetVehiclePedIsIn(plyPed, false)
     if Config.ABPFW then
-    SetVehicleTyreFixed(vehicle, 0)
-    SetVehicleTyreFixed(vehicle, 1)
-    SetVehicleTyreFixed(vehicle, 2)
-    SetVehicleTyreFixed(vehicle, 3)
-    SetVehicleTyreFixed(vehicle, 4)
-    SetVehicleTyreFixed(vehicle, 5)
-    SetVehicleTyreFixed(vehicle, 6)
+        TriggerEvent("fixwheelsevent", vehicle)
     end
     SetVehicleTyresCanBurst(vehicle, false)
     if Config.ABPTCT then
@@ -48,13 +37,7 @@ RegisterCommand(Config.RBPtyrescommand, function()
     local plyPed = PlayerPedId()
     local vehicle = GetVehiclePedIsIn(plyPed, false)
     if Config.RBPFW then
-    SetVehicleTyreFixed(vehicle, 0)
-    SetVehicleTyreFixed(vehicle, 1)
-    SetVehicleTyreFixed(vehicle, 2)
-    SetVehicleTyreFixed(vehicle, 3)
-    SetVehicleTyreFixed(vehicle, 4)
-    SetVehicleTyreFixed(vehicle, 5)
-    SetVehicleTyreFixed(vehicle, 6)
+        TriggerEvent("fixwheelsevent", vehicle)
     end
     SetVehicleTyresCanBurst(vehicle, true)
     if Config.RBPTCT then
@@ -69,6 +52,7 @@ RegisterNetEvent("bptyre", function()
     if IsPedSittingInAnyVehicle(PlayerPedId()) then
     local plyPed = PlayerPedId()
     local vehicle = GetVehiclePedIsIn(plyPed, false)
+    if IsVehicleStopped(vehicle) then
     if Config.BPRTIUST then
         QBCore.Functions.Notify(Config.BPRTIUS)
     end
@@ -91,18 +75,15 @@ RegisterNetEvent("bptyre", function()
     })
     Wait(Config.BPTSUD-1)
 end
-    SetVehicleTyreFixed(vehicle, 0)
-    SetVehicleTyreFixed(vehicle, 1)
-    SetVehicleTyreFixed(vehicle, 2)
-    SetVehicleTyreFixed(vehicle, 3)
-    SetVehicleTyreFixed(vehicle, 4)
-    SetVehicleTyreFixed(vehicle, 5)
-    SetVehicleTyreFixed(vehicle, 6)
+TriggerEvent("fixwheelsevent", vehicle)
+    if Config.BPRTIBP then
     SetVehicleTyresCanBurst(vehicle, false)
+    end
     TriggerServerEvent("sg-tyres:s:removeitem", Config.BpTyreSwap, 1)
     if Config.BPRTIUDT then
     QBCore.Functions.Notify(Config.BPRTIUD)
     end
+end
 end
 end)
 
@@ -110,6 +91,7 @@ RegisterNetEvent("fixtyre", function()
     if IsPedSittingInAnyVehicle(PlayerPedId()) then
     local plyPed = PlayerPedId()
     local vehicle = GetVehiclePedIsIn(plyPed, false)
+    if IsVehicleStopped(vehicle) then
     if Config.NRTIUST then
         QBCore.Functions.Notify(Config.NRTIUS)
     end
@@ -132,18 +114,26 @@ RegisterNetEvent("fixtyre", function()
     })
     Wait(Config.TSUD-1)
 end
-SetTyreHealth(vehicle, 0, 0.0)
-SetVehicleTyreFixed(vehicle, 0)
-SetVehicleTyreFixed(vehicle, 1)
-SetVehicleTyreFixed(vehicle, 2)
-SetVehicleTyreFixed(vehicle, 3)
-SetVehicleTyreFixed(vehicle, 4)
-SetVehicleTyreFixed(vehicle, 5)
-SetVehicleTyreFixed(vehicle, 6)
+TriggerEvent("fixwheelsevent", vehicle)
+if Config.NRTIBP then
 SetVehicleTyresCanBurst(vehicle, true)
+end
 TriggerServerEvent("sg-tyres:s:removeitem", Config.TyreSwap, 1)
 if Config.NRTIUDT then
 QBCore.Functions.Notify(Config.NRTIUD)
 end
 end
+end
+end)
+
+-- wheelfix event:
+
+RegisterNetEvent("fixwheelsevent", function(vehicle)
+    SetVehicleTyreFixed(vehicle, 0)
+    SetVehicleTyreFixed(vehicle, 1)
+    SetVehicleTyreFixed(vehicle, 2)
+    SetVehicleTyreFixed(vehicle, 3)
+    SetVehicleTyreFixed(vehicle, 4)
+    SetVehicleTyreFixed(vehicle, 5)
+    SetVehicleTyreFixed(vehicle, 6)
 end)

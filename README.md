@@ -15,4 +15,6 @@ and the photos to
 
 Check out the github wiki for info or help:
 
+**https://github.com/shamgamer/SG-Tyres/wiki/How-To-Install**
+
 **https://github.com/shamgamer/SG-Tyres/wiki**

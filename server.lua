@@ -17,3 +17,27 @@ local QBCore = exports['qb-core']:GetCoreObject()
 		local player = QBCore.Functions.GetPlayer(source)
 		player.Functions.RemoveItem(item, amount, false)
 	end)
+	
+
+-- Commands:
+
+	QBCore.Commands.Add(Config.Tyrefixcommand, Config.FixTyreCommandDescription, {}, false, function(source)
+		TriggerClientEvent(Config.Tyrefixcommand, source)
+	end, Config.FixTyreCommandRequirement)
+	
+
+	QBCore.Commands.Add(Config.ABPtyrescommand, Config.AddBulletproofTyresCommandDescription, {}, false, function(source)
+		TriggerClientEvent(Config.ABPtyrescommand, source)
+	end, Config.AddBulletproofTyreCommandRequirement)
+
+
+	QBCore.Commands.Add(Config.RBPtyrescommand, Config.RemoveBulletproofTyresCommandDescription, {}, false, function(source)
+		TriggerClientEvent(Config.RBPtyrescommand, source)
+	end, Config.RemoveBulletproofTyreCommandRequirement)
+
+
+
+	RegisterNetEvent("sg-tyres:s:PrintToConsole", function(cmdtype)
+		local playerid = GetPlayerIdentifiers(source)
+		print(playerid[1].. " | Just Used: "  ..cmdtype)
+	end)

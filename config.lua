@@ -1,8 +1,17 @@
 Config = Config or {}
 
--- Start Message
+-- Start Message:
 Config.StartMSGT = true -- Toggles the console message.
 Config.StartMSG = "SG-Tyres:ON" -- A console message when the script starts.
+
+-- Server Console Logging:
+Config.FixtyreConsoleLog = true
+Config.ABPtyreConsoleLog = true
+Config.RBPtyreConsoleLog = true
+Config.NormaltyreSwapConsoleLog = true
+Config.BulletprooftyreSwapConsoleLog = true
+Config.BPTyreSwapConsoleMSG = "BulletProof Tyre Swap"
+Config.NormalTyreSwapConsoleMSG = "Normal Tyre Swap"
 
 -- Command Toggles (true/false):
 Config.TFtoggle = true -- Toggle the fix wheels command.
@@ -15,8 +24,16 @@ Config.ABPtyrescommand = "addbulletprooftyres" -- Fixes and adds Bulletproofing 
 Config.RBPtyrescommand = "removebulletprooftyres" -- Removes the bulletproofing from Tyres of the car you are in.
 
 -- Bulletproof Commands (true/false):
-Config.ABPFW = true -- If add bulletproof tyres command will also fix the tyres.
+Config.ABPFW = false -- If add bulletproof tyres command will also fix the tyres.
 Config.RBPFW = false -- If remove bulletproof tyres command will also fix the tyres.
+
+-- Command Settings:
+Config.FixTyreCommandDescription = "Fixes Your Car's Tires (Admin only)" -- The command description for the fixwheel command.
+Config.AddBulletproofTyresCommandDescription = "Adds Bulletproofing To Your Car's Tires (Admin only)" -- The command description for the addbulletprooftyres command
+Config.RemoveBulletproofTyresCommandDescription = "Removes Bulletproofing From Your Car's Tires (Admin only)" -- The command description for the removebulletprooftyres command
+Config.FixTyreCommandRequirement = "admin" -- What permission level is needed to use the Fixwheels command (admin/god) (default = "admin")
+Config.AddBulletproofTyreCommandRequirement = "admin" -- What permission level is needed to use the addbulletprooftyres command (admin/god) (default = "admin")
+Config.RemoveBulletproofTyreCommandRequirement = "admin" -- What permission level is needed to use the removebulletprooftyres command (admin/god) (default = "admin")
 
 -- Item Toggles (true/false):
 Config.TStoggle = true -- Toggle the tyre swap with item.
@@ -56,11 +73,15 @@ Config.BPRTIUD = "Tyres Have Been Replaced!" -- Bulletproof replace tyres item u
 Config.NRTIBP = true -- If the standard tyre swap will REMOVE bulletproofing (true = remove bulletproof)
 Config.BPRTIBP = true -- If the bulletproof tyre swap will ADD bulletproofing (true = add bulletproof)
 
+-- Vehicle must be stopped toggles
+Config.Nfixtyremustbestopped = true
+Config.BPfixtyremustbestopped = true
+
+-- Cant swap unless a tyre is burst or swap bp status
+Config.NSwapOnlyWhenNeeded = true -- when true you can only swap tyres with the normal tyre swap when the tyres are burst or are bulletproof. when false you can use it allways
+Config.BPSwapOnlyWhenNeeded = true -- when true you can only swap tyres with the bulletproof tyre swap when the tyres are burst or are not bulletproof. when false you can use it allways
 
 
 
-
-
-
--- SG-tyres Version 1.1
+-- SG-tyres Version 1.2
 -- Made by Shamgamer & BR2BOY

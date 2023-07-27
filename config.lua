@@ -1,17 +1,18 @@
 Config = Config or {}
 
 -- Start Message:
-Config.StartMSGT = true -- Toggles the console message.
+Config.CStartMSGT = true -- Toggles the client console message.
+Config.SStartMSGT = true -- Toggles the server console message.
 Config.StartMSG = "SG-Tyres:ON" -- A console message when the script starts.
 
--- Server Console Logging:
-Config.FixtyreConsoleLog = true
-Config.ABPtyreConsoleLog = true
-Config.RBPtyreConsoleLog = true
-Config.NormaltyreSwapConsoleLog = true
-Config.BulletprooftyreSwapConsoleLog = true
-Config.BPTyreSwapConsoleMSG = "BulletProof Tyre Swap"
-Config.NormalTyreSwapConsoleMSG = "Normal Tyre Swap"
+-- Server Console Logging: (format: 'licence | just used: command/message')
+Config.FixtyreConsoleLog = true -- if true a message will be sent in the server console when someone uses the fixtyre command.
+Config.ABPtyreConsoleLog = true -- if true a message will be sent in the server console when someone uses the add bulletproof tyres command.
+Config.RBPtyreConsoleLog = true -- if true a message will be sent in the server console when someone uses the remove bulletproof tyres command.
+Config.NormaltyreSwapConsoleLog = true -- if true a message will be sent in the server console when someone uses the normal tyre swap item.
+Config.BulletprooftyreSwapConsoleLog = true -- if true a message will be sent in the server console when someone uses the bulletproof tyre swap item.
+Config.BPTyreSwapConsoleMSG = "BulletProof Tyre Swap" -- the message that will apear in the server console when using bulletproof tyre swap item.
+Config.NormalTyreSwapConsoleMSG = "Normal Tyre Swap" -- the message that will apear in the server console when using normal tyre swap item.
 
 -- Command Toggles (true/false):
 Config.TFtoggle = true -- Toggle the fix wheels command.
@@ -49,7 +50,7 @@ Config.BPTSUDT = true -- Toggle the progressbar for bulletproof tyre swap.
 
 --Use Duration (INT) (1000 = 1 second):
 Config.TSUD = 10000 -- How much time in miliseconds will it take to replace the tyres with normal tyres.
-Config.BPTSUD = 10000 -- How much time in miliseconds will it take to replace the tyres with bulletproofs tyres.
+Config.BPTSUD = 12500 -- How much time in miliseconds will it take to replace the tyres with bulletproofs tyres.
 
 -- Command Notifications Toggle (true/false):
 Config.FWCTT = true -- Toggles the fix tyres command notification.
@@ -73,15 +74,15 @@ Config.BPRTIUD = "Tyres Have Been Replaced!" -- Bulletproof replace tyres item u
 Config.NRTIBP = true -- If the standard tyre swap will REMOVE bulletproofing (true = remove bulletproof)
 Config.BPRTIBP = true -- If the bulletproof tyre swap will ADD bulletproofing (true = add bulletproof)
 
--- Vehicle must be stopped toggles
-Config.Nfixtyremustbestopped = true
-Config.BPfixtyremustbestopped = true
+-- Vehicle must be stopped toggles:
+Config.Nfixtyremustbestopped = true -- if using the normal tyres swap item will require the car to be stopped.
+Config.BPfixtyremustbestopped = true -- if using the bulletproof tyres swap item will require the car to be stopped.
 
--- Cant swap unless a tyre is burst or swap bp status
+-- Cant swap unless a tyre is burst or swap bp status:
 Config.NSwapOnlyWhenNeeded = true -- when true you can only swap tyres with the normal tyre swap when the tyres are burst or are bulletproof. when false you can use it allways
 Config.BPSwapOnlyWhenNeeded = true -- when true you can only swap tyres with the bulletproof tyre swap when the tyres are burst or are not bulletproof. when false you can use it allways
 
 
 
--- SG-tyres Version 1.2
+-- SG-tyres Version 1.2.2
 -- Made by Shamgamer & BR2BOY

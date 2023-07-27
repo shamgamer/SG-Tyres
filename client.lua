@@ -106,6 +106,7 @@ RegisterNetEvent("fixtyre", function()
     if IsPedSittingInAnyVehicle(PlayerPedId()) then
         local plyPed = PlayerPedId()
         local vehicle = GetVehiclePedIsIn(plyPed, false)
+        local BPcheck = GetVehicleTyresCanBurst(vehicle)
         if IsVehicleStopped(vehicle) or Config.Nfixtyremustbestopped == false then
             if BPcheck == false or checktyres(vehicle) or Config.NSwapOnlyWhenNeeded == false then
                 if Config.NRTIUST then
